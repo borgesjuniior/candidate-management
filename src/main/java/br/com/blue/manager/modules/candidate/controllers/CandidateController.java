@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.blue.manager.modules.candidate.CandidateEntity;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/candidate")
 public class CandidateController {
 
   @GetMapping("/")
-  public ResponseEntity<Object> create(@RequestBody CandidateEntity candidateEntity) {
-    System.out.println(candidateEntity.getEmail());
+  public ResponseEntity<Object> create(@Valid @RequestBody CandidateEntity candidateEntity) {
     return ResponseEntity.ok().body(candidateEntity);
   }
 }
