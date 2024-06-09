@@ -1,4 +1,4 @@
-package br.com.blue.manager.modules.candidate;
+package br.com.blue.manager.modules.company;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -15,15 +15,13 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
+@Entity(name = "company")
 @Data
-@Entity(name = "candidate")
-public class CandidateEntity {
+public class CompanyEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
-
-  private String name;
 
   @NotBlank
   @Pattern(regexp = "^(?!\\s*$).+", message = "O campo username não deve contar espaços")
@@ -35,8 +33,9 @@ public class CandidateEntity {
   @Length(min = 8, max = 100)
   private String password;
 
+  private String website;
+  private String name;
   private String description;
-  private String curriculum;
 
   @CreationTimestamp
   private LocalDateTime createdAt;
