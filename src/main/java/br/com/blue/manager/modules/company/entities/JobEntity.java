@@ -1,4 +1,4 @@
-package br.com.blue.manager.modules.company;
+package br.com.blue.manager.modules.company.entities;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

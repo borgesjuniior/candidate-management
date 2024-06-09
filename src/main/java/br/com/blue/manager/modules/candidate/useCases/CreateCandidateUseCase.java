@@ -20,7 +20,7 @@ public class CreateCandidateUseCase {
         candidateEntity.getEmail());
 
     candidate.ifPresent(c -> {
-      throw new UserFoundException();
+      throw new UserFoundException("User already exists");
     });
 
     return this.candidateRepository.save(candidateEntity);
