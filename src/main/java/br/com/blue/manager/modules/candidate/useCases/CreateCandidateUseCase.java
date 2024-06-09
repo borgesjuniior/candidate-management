@@ -1,4 +1,4 @@
-package br.com.blue.manager.modules.usersCases;
+package br.com.blue.manager.modules.candidate.useCases;
 
 import java.util.Optional;
 

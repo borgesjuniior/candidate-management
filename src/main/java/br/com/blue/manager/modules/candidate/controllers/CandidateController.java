@@ -2,13 +2,13 @@ package br.com.blue.manager.modules.candidate.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.blue.manager.modules.candidate.CandidateEntity;
-import br.com.blue.manager.modules.usersCases.CreateCandidateUseCase;
+import br.com.blue.manager.modules.candidate.useCases.CreateCandidateUseCase;
 import jakarta.validation.Valid;
 
 @RestController
@@ -18,7 +18,7 @@ public class CandidateController {
   @Autowired
   CreateCandidateUseCase candidateUseCase;
 
-  @GetMapping
+  @PostMapping
   public ResponseEntity<Object> create(@Valid @RequestBody CandidateEntity candidateEntity) {
     try {
       var result = candidateUseCase.execute(candidateEntity);
