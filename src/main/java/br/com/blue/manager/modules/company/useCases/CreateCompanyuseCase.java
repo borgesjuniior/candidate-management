@@ -5,8 +5,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.blue.manager.modules.company.CompanyRepository;
 import br.com.blue.manager.modules.company.entities.CompanyEntity;
+import br.com.blue.manager.modules.company.repositories.CompanyRepository;
 
 @Service
 public class CreateCompanyUseCase {

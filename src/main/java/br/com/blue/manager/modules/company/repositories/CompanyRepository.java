@@ -1,4 +1,4 @@
-package br.com.blue.manager.modules.company;
+package br.com.blue.manager.modules.company.repositories;
 
 import java.util.Optional;
 import java.util.UUID;
