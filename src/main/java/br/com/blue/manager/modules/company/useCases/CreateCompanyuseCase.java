@@ -9,7 +9,7 @@ import br.com.blue.manager.modules.company.CompanyRepository;
 import br.com.blue.manager.modules.company.entities.CompanyEntity;
 
 @Service
-public class CreateCompanyuseCase {
+public class CreateCompanyUseCase {
 
   @Autowired
   private CompanyRepository companyRepository;
