@@ -1,5 +1,8 @@
 package br.com.blue.manager.modules.company.useCases;
 
+import java.time.Duration;
+import java.time.Instant;
+
 import javax.naming.AuthenticationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +44,7 @@ public class AuthCompanyUseCase {
 
     var token = JWT.create().withIssuer("candidate-manager")
         .withSubject(company.getId().toString())
+        .withExpiresAt(Instant.now().plus(Duration.ofHours(2)))
         .sign(algorithm);
 
     return token;
