@@ -3,6 +3,7 @@ package br.com.blue.manager.modules.candidate.controllers;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -39,6 +40,10 @@ public class CandidateController {
   @GetMapping
   public ResponseEntity<Object> getMethodName(HttpServletRequest httpServletRequest) {
     var candidateId = httpServletRequest.getAttribute("candidate_id");
+
+    if (candidateId == null) {
+      return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+    }
 
     try {
       var profile = this.profileCandidateUseCase.execute(UUID.fromString(candidateId.toString()));

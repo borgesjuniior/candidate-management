@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/company")
 public class AuthController {
 
   @Autowired
   private AuthCompanyUseCase authCompanyUseCase;
 
-  @PostMapping("/company")
+  @PostMapping("/auth")
   public ResponseEntity<Object> authenticate(@RequestBody AuthCompanyDTO authCompanyDTO) {
     try {
       var token = authCompanyUseCase.execute(authCompanyDTO);
